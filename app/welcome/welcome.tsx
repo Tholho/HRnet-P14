@@ -1,50 +1,95 @@
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
+import { NavLink } from "react-router";
+import logo from "./logoHRnet.png"
 
 export function Welcome() {
   return (
     <main className="flex items-center justify-center pt-16 pb-4">
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
         <header className="flex flex-col items-center gap-9">
-          <div className="w-[500px] max-w-[100vw] p-4">
             <img
-              src={logoLight}
-              alt="React Router"
-              className="block w-full dark:hidden"
+              src={logo}
+              alt="Wealth Health"
             />
-            <img
-              src={logoDark}
-              alt="React Router"
-              className="hidden w-full dark:block"
-            />
-          </div>
         </header>
-        <div className="max-w-[300px] w-full space-y-6 px-4">
-          <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
+        <NavLink to="/employees-list">View Current Employees</NavLink>
+        <section className="max-w-[400px] space-y-6 px-4">
+          <div className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
             <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
-              What&apos;s next?
+              Create Employee
             </p>
-            <ul>
-              {resources.map(({ href, text, icon }) => (
-                <li key={href}>
-                  <a
-                    className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {icon}
-                    {text}
-                  </a>
-                </li>
+            <form>
+              {employeeFields.map(({ id, text, type }) => (
+                <div className="m-5 flex flex-col w-50" key={id}>
+                  <label htmlFor={id}>{text}</label>
+                  <input type={type} id={id} className="bg-white text-black p-1"></input>
+                </div>
               ))}
-            </ul>
-          </nav>
-        </div>
+              <fieldset className="rounded-3xl border border-gray-200 dark:border-gray-700">
+                <legend>Address</legend>
+                {addressFields.map(({ id, text, type, isSelect = false }) => (
+                  <div className="m-5 flex flex-col w-50" key={id}>
+                    <label htmlFor={id}>{text}</label>
+                    {isSelect ? <select name={id} id={id}></select>
+                      :
+                      <input type={type} id={id} className="bg-white text-black p-1"></input>
+                    }
+                  </div>
+                ))}
+              </fieldset>
+            </form>
+          </div>
+        </section>
       </div>
     </main>
   );
 }
+
+
+const employeeFields = [
+  {
+    id: "first-name",
+    text: "First Name",
+    type: "text",
+  },
+  {
+    id: "last-name",
+    text: "Last Name",
+    type: "text",
+  },
+  {
+    id: "date-of-birth",
+    text: "Date of Birth",
+    type: "text",
+  },
+  {
+    id: "start-date",
+    text: "Start Date",
+    type: "text",
+  },
+];
+
+const addressFields = [
+  {
+    id: "street",
+    text: "Street",
+    type: "text",
+  },
+  {
+    id: "city",
+    text: "City",
+    type: "text",
+  },
+  {
+    id: "state",
+    text: "State",
+    isSelect: true,
+  },
+  {
+    id: "zip-code",
+    text: "Zip Code",
+    type: "number",
+  },
+];
 
 const resources = [
   {

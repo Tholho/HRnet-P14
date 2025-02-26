@@ -1,13 +1,13 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import { Employees } from "../employees/employees";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "HRnet" },
+    { title: "Current Employees" },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
 
-export default function Home() {
-  return <Welcome />;
+export default function EmployeesList() {
+  return <Employees />;
 }

@@ -21,29 +21,7 @@ export const employeeFields = [
     },
   ];
   
-  export const addressFields = [
-    {
-      id: "street",
-      text: "Street",
-      type: "text",
-    },
-    {
-      id: "city",
-      text: "City",
-      type: "text",
-    },
-    {
-      id: "state",
-      text: "State",
-      isSelect: true,
-    },
-    {
-      id: "zip-code",
-      text: "Zip Code",
-      type: "number",
-    },
-  ];
-  
+
   export const statesList = [
     {
       "name": "Alabama",
@@ -282,3 +260,58 @@ export const employeeFields = [
       "abbreviation": "WY"
     }
   ];
+
+  export const departmentsList = [
+  {
+    "key": "sales",
+    "name": "Sales",
+  },
+  {
+    "key": "marketing",
+    "name": "Marketing",
+  },
+  {
+    "key": "engineering",
+    "name": "Engineering",
+  },
+  {
+    "key": "human-resources",
+    "name": "Human Resources",
+  },
+  {
+    "key": "legal",
+    "name": "Legal",
+  }
+  ];
+
+  export const addressFields = [
+    {
+      id: "street",
+      text: "Street",
+      type: "text",
+    },
+    {
+      id: "city",
+      text: "City",
+      type: "text",
+    },
+    {
+      id: "state",
+      text: "State",
+      isSelect: true,
+      data: statesList,
+    },
+    {
+      id: "zip-code",
+      text: "Zip Code",
+      type: "number",
+    },
+  ];
+
+  export const departmentSelect = [{
+    id: "department",
+    text: "Department",
+    isSelect: true,
+    data: departmentsList,
+  },
+];

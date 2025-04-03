@@ -4,7 +4,7 @@ import { Welcome } from "./pages/welcome/welcomev2";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "HRnet" },
-    { name: "description", content: "Welcome to React Router!" },
+    { name: "description", content: "Welcome to HRnet" },
   ];
 }
 

@@ -11,5 +11,9 @@ body {
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      opacity: 1;
+    }
   }
 }

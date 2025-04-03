@@ -12,12 +12,12 @@ export const employeeFields = [
     {
       id: "date-of-birth",
       text: "Date of Birth",
-      type: "text",
+      type: "date",
     },
     {
       id: "start-date",
       text: "Start Date",
-      type: "text",
+      type: "date",
     },
   ];
   
